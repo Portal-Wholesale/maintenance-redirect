@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal | Coming Soon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      background: #f5f0eb;
+      color: #1a1a1a;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 540px;
+      text-align: center;
+    }
+
+    /* the retro hit-counter / construction vibe */
+    .banner {
+      border: none;
+      padding: 0.4rem 1.2rem;
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtext {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 2.5rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #1a1a1a;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* marquee — the crown jewel of 90s web */
+    .ticker-wrap {
+      overflow: hidden;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 0.6rem 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .ticker {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll-left 40s linear infinite;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      width: max-content;
+    }
+
+    .ticker .ticker-copy {
+      flex-shrink: 0;
+      padding-right: 2em;
+    }
+
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* construction cones */
+    .cones {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5rem;
+    }
+
+@media (max-width: 500px) {
+      h1 { font-size: 1.6rem; }
+      .subtext { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner">~ under construction ~</div>
+
+    <div class="cones">&#x1F6A7; &#x1F6A7; &#x1F6A7;</div>
+
+    <h1>Portal is getting<br>a new look</h1>
+
+    <div class="divider"></div>
+
+    <p class="subtext">
+      We're stitching together something new behind the scenes.
+      Our wholesale fashion directory will be back shortly &mdash;
+      better fitting than before.
+    </p>
+
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <span class="ticker-copy">&#9733; new features loading &nbsp;&bull;&nbsp; please stand by &nbsp;&bull;&nbsp; pardon our dust &nbsp;&bull;&nbsp; webmaster hard at work &nbsp;&bull;&nbsp;</span>
+        <span class="ticker-copy">&#9733; new features loading &nbsp;&bull;&nbsp; please stand by &nbsp;&bull;&nbsp; pardon our dust &nbsp;&bull;&nbsp; webmaster hard at work &nbsp;&bull;&nbsp;</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
