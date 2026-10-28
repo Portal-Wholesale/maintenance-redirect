@@ -22,5 +22,7 @@
           '';
         };
       });
+
+      checks = nixpkgs.lib.genAttrs systems (system: self.packages.${system});
     };
 }
