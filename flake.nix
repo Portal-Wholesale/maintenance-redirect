@@ -23,6 +23,15 @@
         };
       });
 
-      checks = nixpkgs.lib.genAttrs systems (system: self.packages.${system});
+      checks = nixpkgs.lib.genAttrs systems (system: self.packages.${system} // nixpkgs.lib.optionalAttrs (system == "x86_64-linux") {
+        # Secret scan of the committed tree (no git history in the sandbox).
+        gitleaks = let pkgs = nixpkgs.legacyPackages.${system}; in
+          pkgs.runCommand "gitleaks" { nativeBuildInputs = [ pkgs.gitleaks ]; } ''
+            export HOME="$TMPDIR" GOMAXPROCS="$NIX_BUILD_CORES"
+            cd ${nixpkgs.lib.cleanSource ./.}
+            gitleaks dir --no-banner --redact .
+            touch $out
+          '';
+      });
     };
 }
